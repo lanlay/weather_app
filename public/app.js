@@ -1,1 +1,633 @@
-!function(){"use strict";var e="undefined"==typeof window?global:window;if("function"!=typeof e.require){var t={},n={},r={},o={}.hasOwnProperty,u=/^\.\.?(\/|$)/,a=function(e,t){for(var n,r=[],o=(u.test(t)?e+"/"+t:t).split("/"),a=0,i=o.length;a<i;a++)n=o[a],".."===n?r.pop():"."!==n&&""!==n&&r.push(n);return r.join("/")},i=function(e){return e.split("/").slice(0,-1).join("/")},l=function(t){return function(n){var r=a(i(t),n);return e.require(r,t)}},c=function(e,t){var r=null;r=b&&b.createHot(e);var o={id:e,exports:{},hot:r};return n[e]=o,t(o.exports,l(e),o),o.exports},f=function(e){return r[e]?f(r[e]):e},s=function(e,t){return f(a(i(e),t))},p=function(e,r){null==r&&(r="/");var u=f(e);if(o.call(n,u))return n[u].exports;if(o.call(t,u))return c(u,t[u]);throw new Error("Cannot find module '"+e+"' from '"+r+"'")};p.alias=function(e,t){r[t]=e};var d=/\.[^.\/]+$/,h=/\/index(\.[^\/]+)?$/,m=function(e){if(d.test(e)){var t=e.replace(d,"");o.call(r,t)&&r[t].replace(d,"")!==t+"/index"||(r[t]=e)}if(h.test(e)){var n=e.replace(h,"");o.call(r,n)||(r[n]=e)}};p.register=p.define=function(e,r){if("object"==typeof e)for(var u in e)o.call(e,u)&&p.register(u,e[u]);else t[e]=r,delete n[e],m(e)},p.list=function(){var e=[];for(var n in t)o.call(t,n)&&e.push(n);return e};var b=e._hmr&&new e._hmr(s,p,t,n);p._cache=n,p.hmr=b&&b.wrap,p.brunch=!0,e.require=p}}(),function(){window;require.register("api/openWeatherMap.js",function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}var o=t("axios"),u=r(o),a="893c23322ceed38784d041b0a0622043",i="http://api.openweathermap.org/data/2.5/weather?appid="+a+"&units=imperial";n.exports={getTemp:function(e){var t=encodeURI(e),n=i+"&q="+t;return u["default"].get(n).then(function(e){return e.data.main.temp})["catch"](function(e){return e})}}}),require.register("components/About.js",function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(e,"__esModule",{value:!0});var o=t("react"),u=r(o),a=function(){return u["default"].createElement("h2",null,"About Component")};e["default"]=a}),require.register("components/App.js",function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function u(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(e,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=t("react"),c=r(l),f=(t("react-dom"),t("react-router")),s=t("./Main"),p=r(s),d=t("./Weather"),h=r(d),m=t("./About"),b=r(m),_=t("./Examples"),y=r(_),v=function(e){function t(){return o(this,t),u(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),i(t,[{key:"render",value:function(){return c["default"].createElement(f.Router,{history:f.hashHistory},c["default"].createElement(f.Route,{path:"/",component:p["default"]},c["default"].createElement(f.IndexRoute,{component:h["default"]}),c["default"].createElement(f.Route,{path:"about",component:b["default"]}),c["default"].createElement(f.Route,{path:"examples",component:y["default"]})))}}]),t}(c["default"].Component);e["default"]=v}),require.register("components/Examples.js",function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function u(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(e,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=t("react"),c=r(l),f=function(e){function t(){return o(this,t),u(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),i(t,[{key:"render",value:function(){return c["default"].createElement("h2",null,"Examples Component")}}]),t}(l.Component);e["default"]=f}),require.register("components/Main.js",function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(e,"__esModule",{value:!0});var o=t("react"),u=r(o),a=t("./Nav"),i=r(a),l=function(e){return u["default"].createElement("div",null,u["default"].createElement(i["default"],null),u["default"].createElement("h2",null,"Main Component"),e.children)};e["default"]=l}),require.register("components/Nav.js",function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(e,"__esModule",{value:!0});var o=t("react"),u=r(o),a=t("react-router"),i=function(){return u["default"].createElement("div",null,u["default"].createElement("h2",null,"Nav Component"),u["default"].createElement(a.Link,{to:"/"},"Get Weather"),u["default"].createElement(a.Link,{to:"/about"},"About"),u["default"].createElement(a.Link,{to:"/examples"},"Examples"))};e["default"]=i}),require.register("components/Weather.js",function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function u(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(e,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=t("react"),c=r(l),f=t("./WeatherForm"),s=r(f),p=t("./WeatherMessage"),d=r(p),h=t("../api/openWeatherMap"),m=r(h),b=function(e){function t(){var e,n,r,a;o(this,t);for(var i=arguments.length,l=Array(i),c=0;c<i;c++)l[c]=arguments[c];return n=r=u(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(l))),r.state={isLoading:!1},r.handleSearch=function(e){r.setState({isLoading:!0}),m["default"].getTemp(e).then(function(t){r.setState({location:e,temp:t,isLoading:!1})})["catch"](function(e){return alert("Can't connect to the server.")})},a=n,u(r,a)}return a(t,e),i(t,[{key:"render",value:function(){var e=this.state,t=e.location,n=e.temp,r=e.isLoading,o=function(){return r?c["default"].createElement("h3",null,"Fetching weather..."):n&&t?c["default"].createElement(d["default"],{location:t,temp:n}):void 0};return c["default"].createElement("div",null,c["default"].createElement("h2",null,"Weather Component"),c["default"].createElement(s["default"],{onSearch:this.handleSearch}),o())}}]),t}(l.Component);e["default"]=b}),require.register("components/WeatherForm.js",function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function u(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(e,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=t("react"),c=r(l),f=function(e){function t(){var e,n,r,a;o(this,t);for(var i=arguments.length,l=Array(i),c=0;c<i;c++)l[c]=arguments[c];return n=r=u(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(l))),r.onFormSubmit=function(e){e.preventDefault();var t=r.refs.location.value;t.length>0&&(r.refs.location.value="",r.props.onSearch(t))},a=n,u(r,a)}return a(t,e),i(t,[{key:"render",value:function(){return c["default"].createElement("div",null,c["default"].createElement("form",{onSubmit:this.onFormSubmit},c["default"].createElement("input",{type:"text",ref:"location"}),c["default"].createElement("button",null,"Get Weather")))}}]),t}(l.Component);e["default"]=f}),require.register("components/WeatherMessage.js",function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(e,"__esModule",{value:!0});var o=t("react"),u=r(o),a=function(e){var t=e.location,n=e.temp;return u["default"].createElement("h3",null,"It's ",n," in ",t)};e["default"]=a}),require.register("initialize.js",function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}var o=t("react-dom"),u=r(o),a=t("react"),i=r(a),l=t("components/App"),c=r(l);document.addEventListener("DOMContentLoaded",function(){u["default"].render(i["default"].createElement(c["default"],null),document.querySelector("#app"))})}),require.register("___globals___",function(e,t,n){})}(),require("___globals___");
+(function() {
+  'use strict';
+
+  var globals = typeof window === 'undefined' ? global : window;
+  if (typeof globals.require === 'function') return;
+
+  var modules = {};
+  var cache = {};
+  var aliases = {};
+  var has = ({}).hasOwnProperty;
+
+  var expRe = /^\.\.?(\/|$)/;
+  var expand = function(root, name) {
+    var results = [], part;
+    var parts = (expRe.test(name) ? root + '/' + name : name).split('/');
+    for (var i = 0, length = parts.length; i < length; i++) {
+      part = parts[i];
+      if (part === '..') {
+        results.pop();
+      } else if (part !== '.' && part !== '') {
+        results.push(part);
+      }
+    }
+    return results.join('/');
+  };
+
+  var dirname = function(path) {
+    return path.split('/').slice(0, -1).join('/');
+  };
+
+  var localRequire = function(path) {
+    return function expanded(name) {
+      var absolute = expand(dirname(path), name);
+      return globals.require(absolute, path);
+    };
+  };
+
+  var initModule = function(name, definition) {
+    var hot = null;
+    hot = hmr && hmr.createHot(name);
+    var module = {id: name, exports: {}, hot: hot};
+    cache[name] = module;
+    definition(module.exports, localRequire(name), module);
+    return module.exports;
+  };
+
+  var expandAlias = function(name) {
+    return aliases[name] ? expandAlias(aliases[name]) : name;
+  };
+
+  var _resolve = function(name, dep) {
+    return expandAlias(expand(dirname(name), dep));
+  };
+
+  var require = function(name, loaderPath) {
+    if (loaderPath == null) loaderPath = '/';
+    var path = expandAlias(name);
+
+    if (has.call(cache, path)) return cache[path].exports;
+    if (has.call(modules, path)) return initModule(path, modules[path]);
+
+    throw new Error("Cannot find module '" + name + "' from '" + loaderPath + "'");
+  };
+
+  require.alias = function(from, to) {
+    aliases[to] = from;
+  };
+
+  var extRe = /\.[^.\/]+$/;
+  var indexRe = /\/index(\.[^\/]+)?$/;
+  var addExtensions = function(bundle) {
+    if (extRe.test(bundle)) {
+      var alias = bundle.replace(extRe, '');
+      if (!has.call(aliases, alias) || aliases[alias].replace(extRe, '') === alias + '/index') {
+        aliases[alias] = bundle;
+      }
+    }
+
+    if (indexRe.test(bundle)) {
+      var iAlias = bundle.replace(indexRe, '');
+      if (!has.call(aliases, iAlias)) {
+        aliases[iAlias] = bundle;
+      }
+    }
+  };
+
+  require.register = require.define = function(bundle, fn) {
+    if (typeof bundle === 'object') {
+      for (var key in bundle) {
+        if (has.call(bundle, key)) {
+          require.register(key, bundle[key]);
+        }
+      }
+    } else {
+      modules[bundle] = fn;
+      delete cache[bundle];
+      addExtensions(bundle);
+    }
+  };
+
+  require.list = function() {
+    var list = [];
+    for (var item in modules) {
+      if (has.call(modules, item)) {
+        list.push(item);
+      }
+    }
+    return list;
+  };
+
+  var hmr = globals._hmr && new globals._hmr(_resolve, require, modules, cache);
+  require._cache = cache;
+  require.hmr = hmr && hmr.wrap;
+  require.brunch = true;
+  globals.require = require;
+})();
+
+(function() {
+var global = window;
+var __makeRelativeRequire = function(require, mappings, pref) {
+  var none = {};
+  var tryReq = function(name, pref) {
+    var val;
+    try {
+      val = require(pref + '/node_modules/' + name);
+      return val;
+    } catch (e) {
+      if (e.toString().indexOf('Cannot find module') === -1) {
+        throw e;
+      }
+
+      if (pref.indexOf('node_modules') !== -1) {
+        var s = pref.split('/');
+        var i = s.lastIndexOf('node_modules');
+        var newPref = s.slice(0, i).join('/');
+        return tryReq(name, newPref);
+      }
+    }
+    return none;
+  };
+  return function(name) {
+    if (name in mappings) name = mappings[name];
+    if (!name) return;
+    if (name[0] !== '.' && pref) {
+      var val = tryReq(name, pref);
+      if (val !== none) return val;
+    }
+    return require(name);
+  }
+};
+require.register("api/openWeatherMap.js", function(exports, require, module) {
+'use strict';
+
+var _axios = require('axios');
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var apiKey = '893c23322ceed38784d041b0a0622043';
+var OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=' + apiKey + '&units=imperial';
+module.exports = {
+    getTemp: function getTemp(location) {
+        var endcodedLocation = encodeURI(location);
+        var requestUrl = OPEN_WEATHER_MAP_URL + '&q=' + endcodedLocation;
+        return _axios2.default.get(requestUrl).then(function (res) {
+            return res.data.main.temp;
+        }).catch(function (error) {
+            return error;
+        });
+    }
+};
+});
+
+require.register("components/About.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var About = function About() {
+    return _react2.default.createElement(
+        'h2',
+        null,
+        'About Component'
+    );
+};
+
+exports.default = About;
+});
+
+require.register("components/App.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactRouter = require('react-router');
+
+var _Main = require('./Main');
+
+var _Main2 = _interopRequireDefault(_Main);
+
+var _Weather = require('./Weather');
+
+var _Weather2 = _interopRequireDefault(_Weather);
+
+var _About = require('./About');
+
+var _About2 = _interopRequireDefault(_About);
+
+var _Examples = require('./Examples');
+
+var _Examples2 = _interopRequireDefault(_Examples);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
+
+    function App() {
+        _classCallCheck(this, App);
+
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    }
+
+    _createClass(App, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                _reactRouter.Router,
+                { history: _reactRouter.hashHistory },
+                _react2.default.createElement(
+                    _reactRouter.Route,
+                    { path: '/', component: _Main2.default },
+                    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Weather2.default }),
+                    _react2.default.createElement(_reactRouter.Route, { path: 'about', component: _About2.default }),
+                    _react2.default.createElement(_reactRouter.Route, { path: 'examples', component: _Examples2.default })
+                )
+            );
+        }
+    }]);
+
+    return App;
+}(_react2.default.Component);
+
+exports.default = App;
+});
+
+;require.register("components/Examples.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Examples = function (_Component) {
+    _inherits(Examples, _Component);
+
+    function Examples() {
+        _classCallCheck(this, Examples);
+
+        return _possibleConstructorReturn(this, (Examples.__proto__ || Object.getPrototypeOf(Examples)).apply(this, arguments));
+    }
+
+    _createClass(Examples, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'h2',
+                null,
+                'Examples Component'
+            );
+        }
+    }]);
+
+    return Examples;
+}(_react.Component);
+
+exports.default = Examples;
+});
+
+;require.register("components/Main.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Nav = require('./Nav');
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Main = function Main(props) {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_Nav2.default, null),
+        _react2.default.createElement(
+            'h2',
+            null,
+            'Main Component'
+        ),
+        props.children
+    );
+};
+
+exports.default = Main;
+});
+
+require.register("components/Nav.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Nav = function Nav() {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'h2',
+            null,
+            'Nav Component'
+        ),
+        _react2.default.createElement(
+            _reactRouter.Link,
+            { to: '/' },
+            'Get Weather'
+        ),
+        _react2.default.createElement(
+            _reactRouter.Link,
+            { to: '/about' },
+            'About'
+        ),
+        _react2.default.createElement(
+            _reactRouter.Link,
+            { to: '/examples' },
+            'Examples'
+        )
+    );
+};
+
+exports.default = Nav;
+});
+
+require.register("components/Weather.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _WeatherForm = require('./WeatherForm');
+
+var _WeatherForm2 = _interopRequireDefault(_WeatherForm);
+
+var _WeatherMessage = require('./WeatherMessage');
+
+var _WeatherMessage2 = _interopRequireDefault(_WeatherMessage);
+
+var _openWeatherMap = require('../api/openWeatherMap');
+
+var _openWeatherMap2 = _interopRequireDefault(_openWeatherMap);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Weather = function (_Component) {
+    _inherits(Weather, _Component);
+
+    function Weather() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, Weather);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Weather.__proto__ || Object.getPrototypeOf(Weather)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            isLoading: false
+        }, _this.handleSearch = function (location) {
+            _this.setState({ isLoading: true });
+
+            _openWeatherMap2.default.getTemp(location).then(function (temp) {
+                _this.setState({
+                    location: location,
+                    temp: temp,
+                    isLoading: false
+                });
+            }).catch(function (error) {
+                return alert('Can\'t connect to the server.');
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+    //noinspection JSDuplicatedDeclaration
+
+
+    _createClass(Weather, [{
+        key: 'render',
+        value: function render() {
+            var _state = this.state,
+                location = _state.location,
+                temp = _state.temp,
+                isLoading = _state.isLoading;
+
+            var renderMessage = function renderMessage() {
+                if (isLoading) {
+                    return _react2.default.createElement(
+                        'h3',
+                        null,
+                        'Fetching weather...'
+                    );
+                } else if (temp && location) {
+                    return _react2.default.createElement(_WeatherMessage2.default, { location: location, temp: temp });
+                }
+            };
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    'Weather Component'
+                ),
+                _react2.default.createElement(_WeatherForm2.default, { onSearch: this.handleSearch }),
+                renderMessage()
+            );
+        }
+    }]);
+
+    return Weather;
+}(_react.Component);
+
+exports.default = Weather;
+});
+
+;require.register("components/WeatherForm.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var WeatherForm = function (_Component) {
+    _inherits(WeatherForm, _Component);
+
+    function WeatherForm() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, WeatherForm);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = WeatherForm.__proto__ || Object.getPrototypeOf(WeatherForm)).call.apply(_ref, [this].concat(args))), _this), _this.onFormSubmit = function (e) {
+            e.preventDefault();
+
+            var location = _this.refs.location.value;
+
+            if (location.length > 0) {
+                _this.refs.location.value = '';
+                _this.props.onSearch(location);
+            }
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(WeatherForm, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'form',
+                    { onSubmit: this.onFormSubmit },
+                    _react2.default.createElement('input', { type: 'text', ref: 'location' }),
+                    _react2.default.createElement(
+                        'button',
+                        null,
+                        'Get Weather'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return WeatherForm;
+}(_react.Component);
+
+exports.default = WeatherForm;
+});
+
+;require.register("components/WeatherMessage.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var WeatherMessage = function WeatherMessage(_ref) {
+    var location = _ref.location,
+        temp = _ref.temp;
+    return _react2.default.createElement(
+        'h3',
+        null,
+        'It\'s ',
+        temp,
+        ' in ',
+        location
+    );
+};
+
+exports.default = WeatherMessage;
+});
+
+require.register("initialize.js", function(exports, require, module) {
+'use strict';
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _App = require('components/App');
+
+var _App2 = _interopRequireDefault(_App);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+document.addEventListener('DOMContentLoaded', function () {
+  _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.querySelector('#app'));
+});
+});
+
+require.register("___globals___", function(exports, require, module) {
+  
+});})();require('___globals___');
+
+
+//# sourceMappingURL=app.js.map
