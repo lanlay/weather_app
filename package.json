@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "brunch watch --server",
-    "prod": "brunch build --production"
+    "build": "brunch build --production"
   },
   "dependencies": {
     "axios": "^0.15.2",
